@@ -6,7 +6,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http.Features;
 
-namespace Microsoft.AspNetCore.Connections
+namespace Microsoft.AspNetCore.Connections.Experimental
 {
     /// <summary>
     /// Defines an interface that provides the mechanisms for binding to various types of <see cref="EndPoint"/>s.
@@ -20,6 +20,6 @@ namespace Microsoft.AspNetCore.Connections
         /// <param name="features">A feature collection to pass options when binding.</param>
         /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
         /// <returns>A <see cref="ValueTask{IMultiplexedConnectionListener}"/> that completes when the listener has been bound, yielding a <see cref="IMultiplexedConnectionListener" /> representing the new listener.</returns>
-        ValueTask<IMultiplexedConnectionListener> BindAsync(EndPoint endpoint, IFeatureCollection features = null, CancellationToken cancellationToken = default);
+        ValueTask<IMultiplexedConnectionListener> BindAsync(EndPoint endpoint, IFeatureCollection? features = null, CancellationToken cancellationToken = default);
     }
 }
